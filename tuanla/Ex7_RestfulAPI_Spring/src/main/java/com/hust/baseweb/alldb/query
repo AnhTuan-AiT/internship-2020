@@ -1,0 +1,16 @@
+
+select *
+from product p inner join category c on p.category_id = c.category_id
+where p.product_name like N'%Điện thoại%' and c.category_name = 'Apple';
+
+
+select 	c.category_id,
+		c.category_name,
+		count(*) no_product
+from product p inner join category c on p.category_id = c.category_id
+group by category_id
+order by no_product DESC;
+
+select *
+from product
+order by sold_quantity DESC limit 10
